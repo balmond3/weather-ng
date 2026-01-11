@@ -12,14 +12,7 @@
   
 </head>
 <body>
-<h1 class="text-5xl font-bold text-blue-500">TAILWIND WORKS</h1>
-<div class="p-6 bg-gray-900 text-white rounded-lg shadow-lg">
-  <h1 class="text-5xl font-bold text-blue-400">Tailwind is working!</h1>
-  <p class="mt-2 text-sm text-gray-300">If this text is styled, you're good to go.</p>
-  <button class="mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded">
-    Tailwind Button Test
-  </button>
-</div>
+<div class="min-h-screen bg-slate-100 p-6 flex flex-col gap-8">
 
   Units
 
@@ -45,27 +38,179 @@
   Search for a city, e.g., New York
   Search
 
-  Feels like
-  <!-- Insert temperature here -->
+<section class="bg-white rounded-2xl p-6 shadow flex flex-col gap-4">
+  <div class="flex items-center gap-4">
+    <img src="sunny.svg" class="w-20 h-20" alt="Sunny" />
+    <div class="text-6xl font-bold">20°C</div>
+  </div>
 
-  Humidity
-  <!-- Insert humidity here -->
+  <ul class="grid grid-cols-2 gap-2 text-slate-600">
+    <li>Feels Like: 18°C</li>
+    <li>Humidity: 46%</li>
+    <li>Wind: 14 km/h</li>
+    <li>Precipitation: 0 mm</li>
+    
+  </ul>
+</section>
 
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
+<section class="flex flex-col gap-3">
+  <h2 class="text-xl font-semibold">Daily Forecast</h2>
 
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
 
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+      <p class="font-medium">Tuesday</p>
+      <img src="rainy.svg" class="w-10 h-10" />
+      <p class="text-sm text-slate-600">20°C / 14°C</p>
+    </div>
+    
+
+    <!-- Repeat day cards -->
+  </div>
+</section>
+
+<section class="flex flex-col gap-3">
+  <h2 class="text-xl font-semibold">Hourly Forecast</h2>
+
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+  <div class="flex gap-4 overflow-x-auto pb-2">
+    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+      <p class="text-sm">3 PM</p>
+      <img src="cloudy.svg" class="w-8 h-8" />
+      <p class="font-medium">20°C</p>
+    </div>
+
+    <!-- Repeat hour blocks -->
+  </div>
+</section>
+
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
+  </div>
   </div>
 </body>
 </html>
