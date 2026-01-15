@@ -1,0 +1,12 @@
+<div class="relative inline-block w-full">
+  <button (click)="toggle($event)">
+    <ng-content select="[dropdown-trigger]"></ng-content>
+  </button>
+
+  @if (open) {
+    <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg"
+         (click)="stop($event)">
+      <ng-content select="[dropdown-menu]"></ng-content>
+    </div>
+  }
+</div>

@@ -15,14 +15,12 @@
 <div class="min-h-screen bg-slate-100 p-6 flex flex-col gap-8">
 
 <div class="relative inline-block text-left w-64">
-  <button  dropdown-trigger (click)="units.toggle($event)"
-    
-
-    class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+  <app-dropdown>
+  <button  dropdown-trigger class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
     Units
   </button>
 
-
+<div dropdown-menu>
   <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" (click)="$event.stopPropagation()">
     <div class="px-4 py-2 text-sm font-medium text-gray-700 border-b">Switch to</div>
     <div class="flex justify-between px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
@@ -42,8 +40,8 @@
     <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Millimeters (mm)</div>
     <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Inches (in)</div>
   </div>
-
-
+</div>
+</app-dropdown>
 
 
 
@@ -68,97 +66,28 @@
 </section>
 
 <section class="flex flex-col gap-3">
-  <app-dropdown #units>
-  <button dropdown-trigger (click)="units.toggle($event)"
-    
-
-    class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+  <app-dropdown>
+  <button dropdown-trigger class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
     <h2 class="text-xl font-semibold">Daily Forecast</h2>
   </button>
-  </app-dropdown>
-  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-      <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-        <p class="font-medium">Tuesday</p>
-        <img src="rainy.svg" class="w-10 h-10" />
-        <p class="text-sm text-slate-600">20°C / 14°C</p>
-      </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
-    
-
-    <!-- Repeat day cards -->
-  </div>
-   </div>
+  <div dropdown-menu>
   
+  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" (click)="$event.stopPropagation()">
+    
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Monday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Tuesday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Wednesday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Thursday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Friday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Saturday</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Sunday</div>
+  </div>
+</div>
+
+</app-dropdown>
+
+
+ 
 </section>
 
 <section class="flex flex-col gap-3">
