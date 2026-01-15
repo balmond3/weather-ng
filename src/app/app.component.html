@@ -14,24 +14,38 @@
 <body>
 <div class="min-h-screen bg-slate-100 p-6 flex flex-col gap-8">
 
-  Units
+<div class="relative inline-block text-left w-64">
+  <button  dropdown-trigger (click)="units.toggle($event)"
+    
 
-  Switch to Imperial/Metric
+    class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+    Units
+  </button>
 
-  Temperature
 
-  Celsius (°C)
-  Fahrenheit (°F)
+  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" (click)="$event.stopPropagation()">
+    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-b">Switch to</div>
+    <div class="flex justify-between px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+      <span>Imperial</span>
+      <span>Metric</span>
+    </div>
 
-  Wind Speed
+    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Temperature</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Celsius (°C)</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Fahrenheit (°F)</div>
 
-  km/h
-  mph
+    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Wind Speed</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">km/h</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">mph</div>
 
-  Precipitation
+    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Precipitation</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Millimeters (mm)</div>
+    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Inches (in)</div>
+  </div>
 
-  Millimeters (mm)
-  Inches (in)
+
+
+
 
   How's the sky looking today?
 
@@ -54,14 +68,21 @@
 </section>
 
 <section class="flex flex-col gap-3">
-  <h2 class="text-xl font-semibold">Daily Forecast</h2>
+  <app-dropdown #units>
+  <button dropdown-trigger (click)="units.toggle($event)"
+    
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-    <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
-      <p class="font-medium">Tuesday</p>
-      <img src="rainy.svg" class="w-10 h-10" />
-      <p class="text-sm text-slate-600">20°C / 14°C</p>
-    </div>
+    class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+    <h2 class="text-xl font-semibold">Daily Forecast</h2>
+  </button>
+  </app-dropdown>
+  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+      <div class="bg-white rounded-xl p-4 shadow flex flex-col items-center gap-2">
+        <p class="font-medium">Tuesday</p>
+        <img src="rainy.svg" class="w-10 h-10" />
+        <p class="text-sm text-slate-600">20°C / 14°C</p>
+      </div>
     
 
     <!-- Repeat day cards -->
@@ -136,6 +157,8 @@
 
     <!-- Repeat day cards -->
   </div>
+   </div>
+  
 </section>
 
 <section class="flex flex-col gap-3">
@@ -212,5 +235,6 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   </div>
+</div>
 </body>
 </html>
