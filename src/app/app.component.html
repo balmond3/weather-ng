@@ -1,128 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Weather app</title>
 
 </head>
-<body>
-<div class="min-h-screen bg-slate-100 p-6 flex flex-col gap-8">
-  <div class="flex items-center justify-between">
-<h1>Weather App</h1>
-<div class="relative inline-block text-left w-64">
-  <app-dropdown>
-  <button  dropdown-trigger class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
-    Units
-  </button>
 
-<div dropdown-menu>
-  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" (click)="$event.stopPropagation()">
-    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-b">Switch to</div>
-    <div class="flex justify-between px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-      <span>Imperial</span>
-      <span>Metric</span>
+<body class="min-h-screen bg-gray-100">
+  <div class="w-[80%] mx-auto px-4 pt-6 pb-6"> <!--padding of the body-->
+    <div class="flex items-center justify-between">
+      <h1>Weather App</h1>
+      <div class="relative inline-block text-left w-64">
+        <app-dropdown>
+          <button dropdown-trigger
+            class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+            Units
+          </button>
+
+          <div dropdown-menu>
+            <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg"
+              (click)="$event.stopPropagation()">
+              <div class="px-4 py-2 text-sm font-medium text-gray-700 border-b">Switch to</div>
+              <div class="flex justify-between px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+                <span>Imperial</span>
+                <span>Metric</span>
+              </div>
+
+              <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Temperature</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Celsius (°C)</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Fahrenheit (°F)</div>
+
+              <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Wind Speed</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">km/h</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">mph</div>
+
+              <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Precipitation</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Millimeters (mm)</div>
+              <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Inches (in)</div>
+            </div>
+          </div>
+        </app-dropdown>
+      </div>
     </div>
 
-    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Temperature</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Celsius (°C)</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Fahrenheit (°F)</div>
 
-    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Wind Speed</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">km/h</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">mph</div>
+    <h1>How's the sky looking today?</h1>
 
-    <div class="px-4 py-2 text-sm font-medium text-gray-700 border-t">Precipitation</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Millimeters (mm)</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Inches (in)</div>
-  </div>
-</div>
-</app-dropdown>
-</div>
-</div>
+    <form class="flex items-center gap-2">
+      <input type="search" placeholder="Search…"
+        class="px-4 py-2 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+      <button type="submit"
+        class="px-5 py-2 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition">
+        Search
+      </button>
+    </form>
 
 
-  How's the sky looking today?
+    <section class="bg-white rounded-2xl p-6 shadow flex flex-col gap-4">
+      <div class="flex items-center gap-4">
+        <img src="sunny.svg" class="w-20 h-20" alt="Sunny" />
+        <div class="text-6xl font-bold">20°C</div>
+      </div>
 
-  Search for a city, e.g., New York
-  Search
+      <ul class="grid grid-cols-2 gap-2 text-slate-600">
+        <li>Feels Like: 18°C</li>
+        <li>Humidity: 46%</li>
+        <li>Wind: 14 km/h</li>
+        <li>Precipitation: 0 mm</li>
 
-<section class="bg-white rounded-2xl p-6 shadow flex flex-col gap-4">
-  <div class="flex items-center gap-4">
-    <img src="sunny.svg" class="w-20 h-20" alt="Sunny" />
-    <div class="text-6xl font-bold">20°C</div>
-  </div>
+      </ul>
+    </section>
 
-  <ul class="grid grid-cols-2 gap-2 text-slate-600">
-    <li>Feels Like: 18°C</li>
-    <li>Humidity: 46%</li>
-    <li>Wind: 14 km/h</li>
-    <li>Precipitation: 0 mm</li>
-    
-  </ul>
-</section>
+    <section class="flex flex-col gap-3">
+      <app-dropdown>
+        <button dropdown-trigger
+          class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
+          <h2 class="text-xl font-semibold">Daily Forecast</h2>
+        </button>
+        <div dropdown-menu>
 
-<section class="flex flex-col gap-3">
-  <app-dropdown>
-  <button dropdown-trigger class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md focus:outline-none">
-    <h2 class="text-xl font-semibold">Daily Forecast</h2>
-  </button>
-  <div dropdown-menu>
-  
-  <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg" (click)="$event.stopPropagation()">
-    
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Monday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Tuesday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Wednesday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Thursday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Friday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Saturday</div>
-    <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Sunday</div>
-  </div>
-</div>
+          <div class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg"
+            (click)="$event.stopPropagation()">
 
-</app-dropdown>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Monday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Tuesday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Wednesday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Thursday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Friday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Saturday</div>
+            <div class="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">Sunday</div>
+          </div>
+        </div>
+
+      </app-dropdown>
 
 
- 
-</section>
 
-<section class="flex flex-col gap-3">
-  <h2 class="text-xl font-semibold">Hourly Forecast</h2>
+    </section>
 
-  <div class="flex flex-col gap-4">
-    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
-      <p class="text-sm">3 PM</p>
-      <img src="cloudy.svg" class="w-8 h-8" />
-      <p class="font-medium">20°C</p>
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">Hourly Forecast</h2>
+
+      <div class="flex flex-col gap-4">
+        <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+          <p class="text-sm">3 PM</p>
+          <img src="cloudy.svg" class="w-8 h-8" />
+          <p class="font-medium">20°C</p>
+        </div>
+
+        <!-- Repeat hour blocks vertically -->
+        <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+          <p class="text-sm">4 PM</p>
+          <img src="cloudy.svg" class="w-8 h-8" />
+          <p class="font-medium">19°C</p>
+        </div>
+        <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
+          <p class="text-sm">4 PM</p>
+          <img src="cloudy.svg" class="w-8 h-8" />
+          <p class="font-medium">19°C</p>
+        </div>
+
+        <!-- Add more blocks as needed -->
+      </div>
+
+    </section>
+
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
     </div>
 
-    <!-- Repeat hour blocks vertically -->
-    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
-      <p class="text-sm">4 PM</p>
-      <img src="cloudy.svg" class="w-8 h-8" />
-      <p class="font-medium">19°C</p>
-    </div>
-    <div class="min-w-[80px] bg-white rounded-xl p-3 shadow flex flex-col items-center gap-1">
-      <p class="text-sm">4 PM</p>
-      <img src="cloudy.svg" class="w-8 h-8" />
-      <p class="font-medium">19°C</p>
-    </div>
-
-    <!-- Add more blocks as needed -->
   </div>
-  
-</section>
-
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  
-</div>
 </body>
+
 </html>
